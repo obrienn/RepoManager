@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepoManager</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <span class="logo">RepoManager</span>
+    <nav>
+      <button onclick="location.hash='#catalog'">Catalog</button>
+      <button onclick="location.hash='#tags'">Tags</button>
+    </nav>
+    <button id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </header>
+  <main id="main"></main>
+  <script>
+    (function() {
+      var m = document.cookie.match(/(?:^|; )theme=([^;]*)/);
+      var t = m ? m[1] : 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-toggle').textContent = t === 'dark' ? '☀️ Light' : '🌙 Dark';
+    })();
+    function toggleTheme() {
+      var el = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      if (el.hasAttribute('data-theme')) {
+        el.removeAttribute('data-theme');
+        document.cookie = 'theme=light;path=/;max-age=31536000;SameSite=Lax';
+        btn.textContent = '🌙 Dark';
+      } else {
+        el.setAttribute('data-theme', 'dark');
+        document.cookie = 'theme=dark;path=/;max-age=31536000;SameSite=Lax';
+        btn.textContent = '☀️ Light';
+      }
+    }
+  </script>
+  <script type="module" src="/dist/app.js"></script>
+</body>
+</html>
