@@ -25,6 +25,11 @@ RepoManager solves this by providing a browsable catalog of locally stored GitHu
 - **Light/dark theme** — toggle between themes, persisted to a cookie
 - **Sorted persistence** — sort field and order persist across sessions via cookies
 
+## Development Process
+This was an AI driven rewrite of a former hand-written repo manager I had created. I used OpenCode + DeepSeek V4 Pro. It took a few hours, cost $0.44 and 203K tokens. I had only 2 or 3 issues, each resolved with a single go-back. One of which was a CSS issue which frankly would have taken me several tries to get right.
+
+The AGENTS.md, PRD.md, and a planning/status folder are ignored, but happy to provide details on request.
+
 ## Architecture
 
 ```
