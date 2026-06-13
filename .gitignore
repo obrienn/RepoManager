@@ -1,0 +1,7 @@
+.env
+/library/
+/frontend/dist/
+/.coder/
+session-*
+AGENTS.md
+PRD.md
